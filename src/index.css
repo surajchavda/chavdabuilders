@@ -38,8 +38,8 @@
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Mode Overrides */
-[data-theme='light'] {
+/* White / Light Theme */
+[data-theme='white'] {
   --bg-base: #f8fafc;
   --bg-surface: #ffffff;
   --bg-surface-hover: #f1f5f9;
@@ -49,13 +49,78 @@
   --text-secondary: #475569;
   --text-muted: #94a3b8;
 
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-glow: rgba(37, 99, 235, 0.35);
+
   --border-color: #e2e8f0;
-  --border-light: rgba(0, 0, 0, 0.05);
+  --border-light: rgba(0, 0, 0, 0.06);
 
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-  --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 15px rgba(37, 99, 235, 0.15);
+}
+
+/* Apple / macOS Theme */
+[data-theme='apple'] {
+  --bg-base: #f5f5f7;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #e8e8ed;
+  --bg-elevated: #ffffff;
+
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-muted: #aeaeb2;
+
+  --accent-primary: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-glow: rgba(0, 113, 227, 0.3);
+
+  --accent-success: #34c759;
+  --accent-warning: #ff9f0a;
+  --accent-danger: #ff3b30;
+
+  --border-color: #d2d2d7;
+  --border-light: rgba(0, 0, 0, 0.04);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+  --shadow-glow: 0 0 12px rgba(0, 113, 227, 0.15);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+}
+
+/* Glassy / Frosted Theme */
+[data-theme='glassy'] {
+  --bg-base: #0c0e1a;
+  --bg-surface: rgba(18, 22, 40, 0.6);
+  --bg-surface-hover: rgba(30, 36, 60, 0.65);
+  --bg-elevated: rgba(26, 30, 52, 0.7);
+
+  --text-primary: #e8ecf4;
+  --text-secondary: #8b92a8;
+  --text-muted: #5c6380;
+
+  --accent-primary: #818cf8;
+  --accent-hover: #6366f1;
+  --accent-glow: rgba(129, 140, 248, 0.4);
+
+  --accent-success: #34d399;
+  --accent-warning: #fbbf24;
+  --accent-danger: #f87171;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.04);
+
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 20px rgba(129, 140, 248, 0.3);
 }
 
 * {
@@ -102,8 +167,74 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-[data-theme='light'] .glass-panel {
+[data-theme='white'] .glass-panel {
   background: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme='apple'] .glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+[data-theme='glassy'] .glass-panel {
+  background: rgba(18, 22, 42, 0.45);
+  backdrop-filter: saturate(150%) blur(24px);
+  -webkit-backdrop-filter: saturate(150%) blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Glassy theme: make cards and sidebar also frosted */
+[data-theme='glassy'] .card {
+  background: rgba(18, 22, 42, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+[data-theme='glassy'] .sidebar {
+  background: rgba(12, 14, 28, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-theme='glassy'] .topbar {
+  background: rgba(12, 14, 28, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Apple theme: softer cards */
+[data-theme='apple'] .card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.04);
+  border: none;
+}
+
+[data-theme='apple'] .sidebar {
+  background: #fbfbfd;
+  border-right: 1px solid #d2d2d7;
+}
+
+[data-theme='apple'] .topbar {
+  background: rgba(251,251,253,0.9);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid #d2d2d7;
+}
+
+/* Glassy background decoration */
+[data-theme='glassy'] body::before {
+  content: '';
+  position: fixed;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(129, 140, 248, 0.12) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .btn {
