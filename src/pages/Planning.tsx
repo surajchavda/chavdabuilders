@@ -71,11 +71,11 @@ export default function Planning() {
                      
                      <div style={{ marginTop: '1.5rem', height: '200px', width: '100%', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
                        {p.id === 'p3' ? (
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30006.12458474263!2d73.50974755!3d19.9360551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdde6a152fb0a61%3A0x86134b2f211da329!2sTrimbakeshwar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps?q=19.950782,73.489393&output=embed" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                        ) : p.id === 'p1' ? (
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.26415052994!2d73.7210787!3d19.9911105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb7301712499%3A0x32ebbdd13e4b7b25!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps?q=20.017817,73.760508&output=embed" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                        ) : (
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.0345037134375!2d73.75389!3d20.00713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeba07ecb0a85%3A0x1c3a6125032543!2sIndira%20Nagar%2C%20Nashik!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps?q=Ragrang+CHS+project,+Nashik&output=embed" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                        )}
                      </div>
 

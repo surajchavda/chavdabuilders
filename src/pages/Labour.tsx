@@ -93,7 +93,17 @@ export default function Labour() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', color: 'var(--accent-success)' }}>
                   <MapPin size={20} /> <span style={{ fontWeight: 500, fontSize: '0.875rem' }}>GPS Location Verified</span>
                 </div>
-                <div style={{ width: '100%', height: '150px', backgroundColor: 'var(--bg-surface-hover)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px dashed var(--border-color)', color: 'var(--text-secondary)', fontSize: '0.75rem' }}>Map Image Rendered Here</div>
+                <div style={{ width: '100%', height: '150px', backgroundColor: 'var(--bg-surface-hover)', borderRadius: 'var(--radius-md)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px dashed var(--border-color)', color: 'var(--text-secondary)', fontSize: '0.75rem' }}>
+                    {selectedSite === 'p3' ? (
+                        <iframe src="https://www.google.com/maps?q=19.950782,73.489393&output=embed" width="100%" height="150" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    ) : selectedSite === 'p1' ? (
+                        <iframe src="https://www.google.com/maps?q=20.017817,73.760508&output=embed" width="100%" height="150" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    ) : selectedSite === 'p2' ? (
+                        <iframe src="https://www.google.com/maps?q=Ragrang+CHS+project,+Nashik&output=embed" width="100%" height="150" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    ) : (
+                        "Map Image Rendered Here"
+                    )}
+                </div>
              </div>
 
              <h4 style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-secondary)' }}>Available Workforce</h4>

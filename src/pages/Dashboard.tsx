@@ -15,7 +15,7 @@ export default function Dashboard() {
     <div className="page-content animate-fade-in">
       <div className="page-header" style={{ marginBottom: '1.5rem' }}>
         <div>
-          <h1 className="page-title">Chavda AI Dashboard</h1>
+          <h1 className="page-title">AI Dashboard</h1>
           <p className="page-description">Real-time intelligence and cross-module analytics for absolute site control.</p>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function Dashboard() {
         {/* AI Actionable Insights */}
         <div className="card glass-panel" style={{ borderLeft: '4px solid var(--accent-primary)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontSize: '1.125rem', fontWeight: 600 }}>Chavda AI Intelligence</h3>
+            <h3 style={{ fontSize: '1.125rem', fontWeight: 600 }}>AI Intelligence</h3>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
              {lowStockMaterials.length > 0 && lowStockMaterials.map(m => (
