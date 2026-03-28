@@ -68,7 +68,7 @@ export default function Materials() {
         <button className="btn btn-primary" onClick={() => setActiveTab('newPO')}><FileSignature size={16} /> Draft RFQ / PO</button>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div className="tab-bar" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
         <button className={`btn ${activeTab === 'inventory' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'inventory' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'inventory' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('inventory')}> Site Inventory </button>
         <button className={`btn ${activeTab === 'po' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'po' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'po' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('po')}> Purchase Orders (PO) </button>
         <button className={`btn ${activeTab === 'grn' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'grn' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'grn' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('grn')}> Goods Receipt (GRN) </button>

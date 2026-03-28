@@ -214,16 +214,16 @@ export default function Layout() {
             <span style={{ fontWeight: 500, fontFamily: 'Outfit, sans-serif' }} className="desktop-title">Construction HQ</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div className="glass-panel" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 0.75rem', borderRadius: 'var(--radius-full)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div className="glass-panel sync-pill" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 0.75rem', borderRadius: 'var(--radius-full)' }}>
               <span className="status-badge success">Live</span>
-              <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Sync Active</span>
+              <span className="sync-label" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Sync Active</span>
             </div>
             <button className="btn-icon-only">
               <Bell size={20} />
             </button>
-            <div style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <User size={20} color="var(--text-secondary)" />
+            <div className="avatar-circle" style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <User size={18} color="var(--text-secondary)" />
             </div>
           </div>
         </header>

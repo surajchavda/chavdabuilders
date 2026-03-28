@@ -54,7 +54,7 @@ export default function Subcontractors() {
         <button className="btn btn-primary" onClick={() => setActiveTab('newVendor')}><PlusCircle size={16} /> New Vendor</button>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div className="tab-bar" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
         <button className={`btn ${activeTab === 'directory' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'directory' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'directory' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('directory')}> Vendor Directory </button>
         <button className={`btn ${activeTab === 'workorders' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'workorders' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'workorders' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('workorders')}> Work Orders </button>
       </div>

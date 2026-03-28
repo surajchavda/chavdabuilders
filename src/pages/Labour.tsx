@@ -67,7 +67,7 @@ export default function Labour() {
         </div>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div className="tab-bar" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
         <button className={`btn ${activeTab === 'attendance' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'attendance' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'attendance' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('attendance')}> GPS Punch-In </button>
         <button className={`btn ${activeTab === 'payroll' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'payroll' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'payroll' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('payroll')}> Muster Roll & Wages </button>
         <button className={`btn ${activeTab === 'onboard' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'onboard' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'onboard' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('onboard')}> Onboard Worker </button>

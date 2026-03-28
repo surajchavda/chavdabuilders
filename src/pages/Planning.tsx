@@ -36,7 +36,7 @@ export default function Planning() {
         <button className="btn btn-primary" onClick={() => setActiveTab('registration')}><Plus size={16} /> New Project</button>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div className="tab-bar" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
         <button className={`btn ${activeTab === 'projects' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'projects' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'projects' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('projects')}> Active Projects </button>
         <button className={`btn ${activeTab === 'registration' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'registration' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'registration' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('registration')}> RERA Registration </button>
       </div>
@@ -47,53 +47,53 @@ export default function Planning() {
             <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '1.5rem' }}>Project Timelines</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {projects.map(p => (
-                <div key={p.id} style={{ border: '1px solid var(--border-color)', padding: '1.5rem', borderRadius: 'var(--radius-md)', display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <h4 style={{ fontSize: '1.25rem', fontWeight: 600 }}>{p.name}</h4>
+                <div key={p.id} style={{ border: '1px solid var(--border-color)', padding: '1.25rem', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <h4 style={{ fontSize: '1.125rem', fontWeight: 600 }}>{p.name}</h4>
                       <span className={`status-badge ${p.status === 'Completed' ? 'success' : (p.status === 'Active' ? 'info' : 'warning')}`}>MahaRERA: {p.reraId}</span>
                     </div>
 
-                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginTop: '1.5rem' }}>
-                       <div style={{ backgroundColor: 'var(--bg-base)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
-                          <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Approved Budget</p>
-                          <p style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>₹{(p.budget/10000000).toFixed(2)} Cr</p>
+                     <div className="grid grid-cols-3" style={{ gap: '0.75rem', marginTop: '1rem' }}>
+                       <div style={{ backgroundColor: 'var(--bg-base)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
+                          <p style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Approved Budget</p>
+                          <p style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)' }}>₹{(p.budget/10000000).toFixed(2)} Cr</p>
                        </div>
-                       <div style={{ backgroundColor: 'var(--bg-base)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
-                          <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Actual Spent</p>
-                          <p style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>₹{(p.spent/10000000).toFixed(2)} Cr</p>
+                       <div style={{ backgroundColor: 'var(--bg-base)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
+                          <p style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Actual Spent</p>
+                          <p style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)' }}>₹{(p.spent/10000000).toFixed(2)} Cr</p>
                        </div>
-                       <div style={{ backgroundColor: 'var(--bg-base)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
-                          <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>RERA Registration</p>
-                          <p style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-primary)' }}>{p.reraId}</p>
+                       <div style={{ backgroundColor: 'var(--bg-base)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
+                          <p style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>RERA Registration</p>
+                          <p style={{ fontSize: '0.8125rem', fontWeight: 500, color: 'var(--text-primary)' }}>{p.reraId}</p>
                        </div>
                      </div>
                      
-                     <div style={{ marginTop: '1.5rem', height: '200px', width: '100%', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+                     <div style={{ marginTop: '1rem', height: '180px', width: '100%', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
                        {p.id === 'p3' ? (
-                          <iframe src="https://www.google.com/maps?q=19.950782,73.489393&output=embed" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps?q=19.950782,73.489393&output=embed" width="100%" height="180" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                        ) : p.id === 'p1' ? (
-                          <iframe src="https://www.google.com/maps?q=20.017817,73.760508&output=embed" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps?q=20.017817,73.760508&output=embed" width="100%" height="180" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                        ) : (
-                          <iframe src="https://www.google.com/maps?q=Ragrang+CHS+project,+Nashik&output=embed" width="100%" height="200" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                          <iframe src="https://www.google.com/maps?q=Ragrang+CHS+project,+Nashik&output=embed" width="100%" height="180" style={{border:0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                        )}
                      </div>
 
-                    <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>Target completion: {p.endDate} • Status: {p.status}</p>
+                    <p style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', marginTop: '0.75rem' }}>Target completion: {p.endDate} • Status: {p.status}</p>
                     
                     <div style={{ width: '100%', height: '8px', backgroundColor: 'var(--bg-base)', borderRadius: 'var(--radius-full)', overflow: 'hidden' }}>
                       <div style={{ width: `${p.progress}%`, height: '100%', backgroundColor: p.progress > 85 ? 'var(--accent-success)' : 'var(--accent-primary)', borderRadius: 'var(--radius-full)' }}></div>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.6875rem', color: 'var(--text-muted)', marginTop: '0.375rem', flexWrap: 'wrap', gap: '0.25rem' }}>
                       <span style={{ color: p.progress > 0 ? 'var(--accent-primary)' : 'var(--text-muted)', fontWeight: p.progress > 0 ? 600 : 400 }}>Substructure</span>
                       <span style={{ color: p.progress > 15 ? 'var(--accent-primary)' : 'var(--text-muted)', fontWeight: p.progress > 15 ? 600 : 400 }}>Superstructure</span>
                       <span style={{ color: p.progress > 50 ? 'var(--accent-primary)' : 'var(--text-muted)', fontWeight: p.progress > 50 ? 600 : 400 }}>{p.currentStage}</span>
                       <span style={{ color: p.progress >= 100 ? 'var(--accent-success)' : 'var(--text-muted)', fontWeight: p.progress >= 100 ? 600 : 400 }}>Completion</span>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <button className="btn btn-secondary">Update Phase</button>
-                    <button className="btn btn-primary">Form 3 Update</button>
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <button className="btn btn-secondary" style={{ flex: '1 1 auto' }}>Update Phase</button>
+                    <button className="btn btn-primary" style={{ flex: '1 1 auto' }}>Form 3 Update</button>
                   </div>
                 </div>
               ))}

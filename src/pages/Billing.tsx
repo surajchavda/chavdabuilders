@@ -48,7 +48,7 @@ export default function Billing() {
         </div>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div className="tab-bar" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
         <button className={`btn ${activeTab === 'pnl' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'pnl' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'pnl' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('pnl')}> Live P&L </button>
         <button className={`btn ${activeTab === 'estimate' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'estimate' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'estimate' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('estimate')}> Estimates (PWD DSR) </button>
         <button className={`btn ${activeTab === 'rabills' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'rabills' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'rabills' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('rabills')}> Subcontractor RA Bills </button>

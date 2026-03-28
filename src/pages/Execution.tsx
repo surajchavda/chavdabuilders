@@ -21,7 +21,7 @@ export default function Execution() {
         </div>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+      <div className="tab-bar" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
         <button className={`btn ${activeTab === 'dpr' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'dpr' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'dpr' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('dpr')}> Daily Progress (DPR) </button>
         <button className={`btn ${activeTab === 'materials' ? 'btn-secondary' : ''}`} style={{ border: 'none', background: activeTab === 'materials' ? 'var(--bg-elevated)' : 'transparent', color: activeTab === 'materials' ? 'var(--text-primary)' : 'var(--text-secondary)' }} onClick={() => setActiveTab('materials')}> Material Tracking </button>
       </div>
